@@ -1,0 +1,30 @@
+{% extends "notebook_app/main.html" %}
+
+{% block content %}
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.content}}</p>
+
+    <p>
+        <small>Created: {{ note.date_added|date:'d.m G:i' }}</small>
+        <br>
+        <small>Last Modified: {{ note.last_modified|date:'d.m G:i' }}</small>
+    </p>
+<!--    <a href="{% url 'note-update' note.pk %}">-->
+<!--        <button>-->
+<!--            Edit-->
+<!--        </button>-->
+<!--    </a>-->
+<!--    <a href="{% url 'note-delete' note.pk %}">-->
+<!--        <button>-->
+<!--            Delete-->
+<!--        </button>-->
+<!--    </a>-->
+    <p style="text-align: center">
+        <a href="{% url 'note-update' note.pk %}">
+            <i>Edit</i>
+        </a>
+        <a href="{% url 'note-delete' note.pk %}">
+            <b>Delete</b>
+        </a>
+    </p>
+{% endblock %}

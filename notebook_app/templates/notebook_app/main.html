@@ -1,0 +1,65 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'notebook_app/favicon/apple-touch-icon.png}' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'notebook_app/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'notebook_app/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'notebook_app/favicon/site.webmanifest' %}">
+
+    {% if page_title %}
+        <title>{{ page_title}}</title>
+    {% else %}
+        <title>Simple page</title>
+    {% endif %}
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'notebook-home' %}">
+                <img src="{% static 'notebook_app/logo.png' %}" alt="logo"
+                height="50">
+            </a>
+            <ul>
+                <li>
+                    <a href="{% url 'notebook-home' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'notebook-about' %}">About</a>
+                </li>
+                <li>
+                    <a href="{% url 'note-create' %}">New Note</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+        {% block content %} {% endblock %}
+        </section>
+
+    </main>
+    <footer>
+        <hr>
+        <p>Created by
+            <a href="https://github.com/Solidarov" target="_blank">
+                Pablo↗
+            </a><br>
+            Powered by
+            <a href="https://andybrewer.github.io/mvp/" target="_blank">
+                MPV.CSS↗
+            </a> and
+            <a href="https://www.djangoproject.com/" target="_blank">
+               Django↗
+            </a>
+
+    </footer>
+</body>
+</html>
