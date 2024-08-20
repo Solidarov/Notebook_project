@@ -2,7 +2,9 @@
 
 ## About project
 
-...
+This project was written to learn the basic functionality of Django and the MVP.CSS framework. 
+
+This web application serves as a simple notebook with the following features: **creating** a new note, **editing**, **viewing** and **deleting it**.
 
 ## Technologies
 - Language: Python 3.12.4
