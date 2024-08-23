@@ -17,20 +17,36 @@ To install the project, follow these steps:
 ```
 git clone https://github.com/Solidarov/Notebook_project.git
 ```
+
 2) Create virtual environment
 ```
 python -m venv venv
 ```
+
 3) Install the requirements
 ```
 python -m pip install -r requirements.tx
 ```
-4) Run Django migrations
+
+4) Create .env file in the root directory and add the following variables:
+>[!NOTE]
+>Project run on the PostgreSQL database
+
+```
+NAME = <database_name>
+USER = <database_username>
+PASSWORD = <database_password>
+HOST = <database_host>
+```
+
+
+5) Run Django migrations
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
-5) Run the server
+
+6) Run the server
 ```
 python manage.py runserver
 ```
